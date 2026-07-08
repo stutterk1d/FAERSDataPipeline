@@ -1,0 +1,29 @@
+{
+  "project_name": "faers-data-pipeline",
+  "target_quarters": ["2024Q1", "2024Q2"],
+  "data_source": {
+    "ascii_base_url": "https://fis.fda.gov/content/Exports",
+    "download_page": "https://fis.fda.gov/extensions/FPD-QDE-FAERS/FPD-QDE-FAERS.html"
+  },
+  "file_types": ["DEMO", "DRUG", "REAC", "OUTC", "RPSR", "THER", "INDI"],
+  "paths": {
+    "colab": {
+      "project_root": "/content/drive/MyDrive/faers-data-pipeline",
+      "raw": "/content/drive/MyDrive/faers-data-pipeline/data/raw",
+      "bronze": "/content/drive/MyDrive/faers-data-pipeline/data/bronze",
+      "silver": "/content/drive/MyDrive/faers-data-pipeline/data/silver",
+      "gold": "/content/drive/MyDrive/faers-data-pipeline/data/gold"
+    },
+    "azure": {
+      "storage_account": "stfaersproject",
+      "raw_container": "raw",
+      "processed_container": "processed",
+      "presentation_container": "presentation"
+    }
+  },
+  "signal_detection": {
+    "prr_threshold": 2.0,
+    "chi2_threshold": 4.0,
+    "min_report_count": 3
+  }
+}
